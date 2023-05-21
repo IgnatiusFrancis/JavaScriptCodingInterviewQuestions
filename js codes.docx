@@ -3,6 +3,7 @@ For Reactjs theory questions: https://github.com/sudheerj/reactjs-interview-ques
 For Google, Facebook, Microsoft coding challenges: https://youtube.com/c/KevinNaughtonJr
 Jest: https://github.com/sapegin/jest-cheat-sheet
 https://plainenglish.io/blog/50-javascript-output-questions
+https://github.com/priya42bagde/javascript-interview-questions?organization=priya42bagde&organization=priya42bagde#what-is-json-and-its-common-operations ---> IMP
 
 https://learnersbucket.com/javascript-sde-cheat-sheet/
 https://javascript.info/
@@ -3238,8 +3239,19 @@ Output: 1
 However, if you use the assignment operator for a reference value, it will not copy the value. Instead, both variables will reference the same object in the memory:
 
  JS objects (as non-primitive data types) differ because they have reference values and those values are mutable. This means they share a memory address when shallow copied.
+
+📝 What is shallow vs Deep copy in javascript?
+
+As we know in javascript there are two data types, one is primitive and the other is non-primitive. The primitive data type is immutable while non-primitive is mutable.
+
+✏️ In Shallow copy, when we assign a variable to another variable using the assignment operator, We are actually assigning its reference to another variable, which means both variables point to the same memory location. If we change any of them, it will be reflected in both. All non-primitive data types are shallow copied.
+
+✏️ In Deep copy, when we assign a variable to another variable using the assignment operator, We are actually assigning only value and both of these variables are pointing to different locations which means if I change one, then it will not get reflected in both. All primitive data types are deep copied.
+
+
+
+
 =========================================================================================================================================================================
-Airbus Interview Question:
 function countOccurance(arr){
   let map ={}, sortedArr = arr.sort((a,b)=>a-b);
   for(var item of sortedArr){
@@ -3602,25 +3614,7 @@ function mergedTwoArrays(arr1,arr2){
 }
 console.log(mergedTwoArrays([1,2,3,4], [2,5,6]))
 =======================================================================================================================================================================
-How to avoid multiple function calls:
-function once(fn, context){
- let ran
- return function(){
-   if(fn){
-     ran = fn.apply(context || this, arguments)
-     fn= null
-   }
-   return ran
- }
-}
-const hello = (a,b) => console.log("without ONCE",a, b)
-const hello1 = once((a,b ) => console.log("ONCE", a, b))
-hello(1,2);
-hello(1,2);
-hello(1,2);
-hello1(1,2);
-hello1(1,2);
-hello1(1,2);
+
 =======================================================================================================================================================================
 ********************Implementation of Currying*****************
   
@@ -3667,18 +3661,11 @@ console.log(city) //Delhi
 
 =======================================================================================================================================================================
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
--------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dassault Systems:
 const inputArray = ["INDIA:[Delhi,Mumbai,Chennai]"]; //1
 const extepctedOutputArray = ["INDIA:[Delhi]", "OR", "INDIA:[Mumbai]", "OR", "INDIA:[Chennai]"];
@@ -3699,8 +3686,6 @@ function convertToORBasedExpression (arr){
  return outputArray; //5
 }
 convertToORBasedExpression(inputArray)
-
----------------------------------
 
 
 
